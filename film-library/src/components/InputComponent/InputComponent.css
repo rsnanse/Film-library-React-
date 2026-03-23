@@ -1,0 +1,39 @@
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+}
+
+.input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    color: var(--main-color-text);
+    border: 1px solid #323b54;
+    border-radius: 12px;
+    padding: 24px 16px 24px 56px;
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    min-width: 384px;
+}
+
+.input_without_icon {
+    padding: 24px 16px;
+    min-width: 352px;
+}
+
+.input::placeholder {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 114%;
+    color: #475069;
+}
