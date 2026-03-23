@@ -1,6 +1,11 @@
 import './Button.css';
-function Button() {
-  return <button className="button-search">Искать</button>;
+import InputComponent from '../InputComponent/InputComponent';
+function Button({ text, onClick }) {
+    return (
+        <button className="button-search" onClick={onClick}>
+            {text}
+        </button>
+    );
 }
 
 export default Button;
