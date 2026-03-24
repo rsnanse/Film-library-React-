@@ -1,0 +1,10 @@
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+.card-list_paragraph {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 20px;
+}

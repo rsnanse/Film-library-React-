@@ -16,7 +16,7 @@ function NavigationPanel() {
                         <a href="#" className="nav-list_link">
                             Мои фильмы
                         </a>
-                        <div className="nav-list_counter">1000</div>
+                        <div className="nav-list_counter">2</div>
                     </li>
                     <li className="nav-list_item">
                         <a href="#" className="nav-list_link">
