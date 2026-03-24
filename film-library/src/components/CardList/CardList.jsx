@@ -8,7 +8,7 @@ function CardList({ films }) {
         return (
             <div className="card-list">
                 {films.map((el) => (
-                    <CardFilm counter={el.rating} poster={el.poster} title={el.title}></CardFilm>
+                    <CardFilm key={el.id} counter={el.rating} poster={el.poster} title={el.title}></CardFilm>
                 ))}
             </div>
         );

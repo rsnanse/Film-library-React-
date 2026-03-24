@@ -9,11 +9,11 @@ import SearchIconSvg from '/search-icon.svg';
 import CardList from './components/CardList/CardList';
 
 const INITIAL_DATA = [
-    { rating: 1, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
-    { rating: 2, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
-    { rating: 3, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
-    { rating: 4, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
-    { rating: 5, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' }
+    { id: 1, rating: 1, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 2, rating: 2, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 3, rating: 3, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 4, rating: 4, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 5, rating: 5, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' }
 ];
 
 function App() {
