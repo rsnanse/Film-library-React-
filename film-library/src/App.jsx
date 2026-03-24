@@ -6,6 +6,15 @@ import InputComponent from './components/InputComponent/InputComponent';
 import SearchHeader from './components/SearchHeader/SearchHeader';
 import NavigationPanel from './layouts/NavigationPanel/NavigationPanel';
 import SearchIconSvg from '/search-icon.svg';
+import CardList from './components/CardList/CardList';
+
+const INITIAL_DATA = [
+    { id: 1, rating: 1, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 2, rating: 2, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 3, rating: 3, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 4, rating: 4, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
+    { id: 5, rating: 5, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' }
+];
 
 function App() {
     const [data, setData] = useState('');
@@ -16,6 +25,7 @@ function App() {
     const buttonClick = () => {
         console.log('Поиск:', data);
     };
+
     return (
         <div className="app">
             <Background></Background>
@@ -25,6 +35,7 @@ function App() {
                 <InputComponent icon={SearchIconSvg} value={data} placeholder={'Введите название'} onChange={inputChange}></InputComponent>
                 <Button onClick={buttonClick} text={'Искать'}></Button>
             </div>
+            <CardList films={INITIAL_DATA}></CardList>
         </div>
     );
 }

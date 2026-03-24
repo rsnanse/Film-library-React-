@@ -2,6 +2,10 @@
     --bg-color: #121829;
     --main-color-text: #a8aebf;
     --color-white: #fff;
+    --rating-text: #ffad49;
+    --card-title: #ebeef5;
+    --card-to-favorites: #7b6ef6;
+    --card-in-favorites: #37d8a7;
 }
 
 * {
