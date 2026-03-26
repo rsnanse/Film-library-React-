@@ -1,8 +1,7 @@
-import './Button.css';
-import InputComponent from '../InputComponent/InputComponent';
+import styles from './Button.module.css';
 function Button({ text, onClick }) {
     return (
-        <button className="button-search" onClick={onClick}>
+        <button className={styles['btn-search']} onClick={onClick}>
             {text}
         </button>
     );

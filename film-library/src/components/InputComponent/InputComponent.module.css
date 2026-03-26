@@ -1,4 +1,4 @@
-.input-wrapper {
+.wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -7,7 +7,7 @@
     gap: 16px;
 }
 
-.input-icon {
+.icon {
     position: absolute;
     left: 16px;
 }
@@ -25,7 +25,7 @@
     min-width: 384px;
 }
 
-.input_without_icon {
+.hidden {
     padding: 24px 16px;
     min-width: 352px;
 }

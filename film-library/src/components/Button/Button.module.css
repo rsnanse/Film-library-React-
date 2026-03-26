@@ -1,4 +1,4 @@
-.button-search {
+.btn-search {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,6 @@
     cursor: pointer;
 }
 
-.button-search:hover {
+.btn-search:hover {
     background: #3d3299;
 }

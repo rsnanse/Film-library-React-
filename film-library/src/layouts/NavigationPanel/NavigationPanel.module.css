@@ -1,4 +1,4 @@
-.nav-container {
+.container {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,14 +12,14 @@
     justify-content: center;
 }
 
-.nav-list {
+.list {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
 }
 
-.nav-list_item {
+.item {
     padding: 12px 16px;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@
     gap: 8px;
 }
 
-.nav-list_counter {
+.counter {
     border-radius: 12px;
     background-color: #7b6ef6;
     font-weight: 600;
@@ -41,9 +41,9 @@
     padding: 0 7px;
 }
 
-.nav-list_link__active {
+.active {
     color: var(--color-white);
 }
-.nav-list_link:hover {
+.link:hover {
     color: #e6edff;
 }
