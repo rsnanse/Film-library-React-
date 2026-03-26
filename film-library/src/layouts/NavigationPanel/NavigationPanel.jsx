@@ -1,28 +1,28 @@
-import './NavigationPanel.css';
+import styles from './NavigationPanel.module.css';
 function NavigationPanel() {
     return (
-        <div className="nav-container">
-            <div className="logo">
+        <div className={styles.container}>
+            <div className={styles.logo}>
                 <img src="/logo.svg" alt="Логотип" />
             </div>
             <nav>
-                <ul className="nav-list">
-                    <li className="nav-list_item">
-                        <a href="#" className="nav-list_link nav-list_link__active">
+                <ul className={styles.list}>
+                    <li className={styles.item}>
+                        <a href="#" className={`${styles.link} ${styles.active}`}>
                             Поиск фильмов
                         </a>
                     </li>
-                    <li className="nav-list_item">
-                        <a href="#" className="nav-list_link">
+                    <li className={styles.item}>
+                        <a href="#" className={styles.link}>
                             Мои фильмы
                         </a>
-                        <div className="nav-list_counter">2</div>
+                        <div className={styles.counter}>2</div>
                     </li>
-                    <li className="nav-list_item">
-                        <a href="#" className="nav-list_link">
+                    <li className={styles.item}>
+                        <a href="#" className={styles.link}>
                             Войти
                         </a>
-                        <img src="/login-icon.svg" alt="Иконка войти" className="nav-list_login-icon" />
+                        <img src="/login-icon.svg" alt="Иконка войти" />
                     </li>
                 </ul>
             </nav>
