@@ -2,12 +2,12 @@ import Headling from '../Headling/Headling';
 import Paragraph from '../Paragraph/Paragraph';
 import styles from './SearchHeader.module.css';
 
-function SearchHeader() {
+function SearchHeader({ title, innerText }) {
     return (
         <>
             <div className={styles.wrapper}>
-                <Headling></Headling>
-                <Paragraph></Paragraph>
+                <Headling>{title}</Headling>
+                {innerText && <Paragraph>{innerText}</Paragraph>}
             </div>
         </>
     );

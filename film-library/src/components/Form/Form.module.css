@@ -1,3 +1,18 @@
+.search-wrapper {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 24px;
+    margin-bottom: 80px;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    margin-top: 27px;
+}
 .wrapper {
     position: relative;
     display: flex;
@@ -27,7 +42,7 @@
 
 .hidden {
     padding: 24px 16px;
-    min-width: 352px;
+    min-width: 384px;
 }
 
 .input::placeholder {
@@ -36,4 +51,24 @@
     font-size: 14px;
     line-height: 114%;
     color: #475069;
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #fff;
+    border: 2px solid #7b6ef6;
+    border-radius: 12px;
+    padding: 16px 32px;
+    background: #7b6ef6;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.btn-search:hover {
+    background: #3d3299;
 }
