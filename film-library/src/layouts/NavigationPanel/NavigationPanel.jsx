@@ -1,7 +1,7 @@
 import styles from './NavigationPanel.module.css';
 function NavigationPanel({ activeUser, logOut }) {
-    const userLogout = (e) => {
-        e.preventDefault();
+    const userLogout = (event) => {
+        event.preventDefault();
         logOut();
     };
     return (
