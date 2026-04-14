@@ -1,8 +1,12 @@
+import { UserContext } from '../../Context/UserContext';
+import { useAuth } from '../../hooks/Auth.hook';
 import styles from './NavigationPanel.module.css';
-function NavigationPanel({ activeUser, logOut }) {
-    const userLogout = (event) => {
-        event.preventDefault();
-        logOut();
+function NavigationPanel() {
+    const { activeUser, handleLogOut } = useAuth(UserContext);
+
+    const userLogout = (e) => {
+        e.preventDefault();
+        handleLogOut();
     };
     return (
         <div className={styles.container}>
