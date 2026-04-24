@@ -1,16 +1,13 @@
-import { createContext } from 'react';
+import { ChangeEvent, createContext, SyntheticEvent } from 'react';
 import { useState, useEffect } from 'react';
+import { User, IUserContext, UserContextProps } from './UserContext.props';
 
-export const UserContext = createContext({
-    id: undefined,
-    name: undefined,
-    isLogined: undefined
-});
+export const UserContext = createContext<IUserContext | undefined>(undefined);
 
-export const UserContextProvider = ({ children }) => {
-    const [userName, setUserName] = useState('');
+export const UserContextProvider = ({ children }: UserContextProps) => {
+    const [userName, setUserName] = useState<string>('');
 
-    const [activeUser, setActiveUser] = useState(() => {
+    const [activeUser, setActiveUser] = useState<string | string[]>(() => {
         const res = localStorage.getItem('activeUser');
         try {
             return res ? JSON.parse(res) : [];
@@ -19,26 +16,26 @@ export const UserContextProvider = ({ children }) => {
         }
     });
 
-    const [profiles, setProfiles] = useState(() => {
+    const [profiles, setProfiles] = useState<User[]>(() => {
         const res = localStorage.getItem('profiles');
         return res ? JSON.parse(res) : [];
     });
 
     useEffect(() => {
         localStorage.setItem('profiles', JSON.stringify(profiles));
-        if (activeUser) {
+        if (activeUser && (typeof activeUser === 'string' || activeUser.length > 0)) {
             localStorage.setItem('activeUser', JSON.stringify(activeUser));
         } else {
             localStorage.removeItem('activeUser');
         }
     }, [profiles, activeUser]);
 
-    const onChangeProfile = (e) => {
+    const onChangeProfile = (e: ChangeEvent<HTMLInputElement>) => {
         setUserName(e.target.value);
     };
 
-    const handleProfile = (event) => {
-        event?.preventDefault();
+    const handleProfile = (event: SyntheticEvent<HTMLFormElement>) => {
+        event.preventDefault();
         if (userName && typeof userName === 'string' && userName.trim()) {
             console.log('Вход на сайт с профилем:', userName);
             const isExist = profiles.some((profile) => {

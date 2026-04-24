@@ -1,8 +1,9 @@
 import Headling from '../Headling/Headling';
 import Paragraph from '../Paragraph/Paragraph';
 import styles from './SearchHeader.module.css';
+import { SearchHeaderProps } from './SearchHeader.props';
 
-function SearchHeader({ title, innerText }) {
+function SearchHeader({ title, innerText }: SearchHeaderProps) {
     return (
         <>
             <div className={styles.wrapper}>

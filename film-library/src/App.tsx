@@ -7,8 +7,9 @@ import CardList from './components/CardList/CardList';
 import Form from './components/Form/Form';
 import { useSearchFilm } from './hooks/Search.hook';
 import { UserContextProvider } from './Context/UserContext';
+import { FilmItem } from './interfaces';
 
-const INITIAL_DATA = [
+const INITIAL_DATA: FilmItem[] = [
     { id: 1, rating: 1, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
     { id: 2, rating: 2, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
     { id: 3, rating: 3, poster: '/black-widow.jpg', title: 'Black Widow', favorites: 'В избранное' },
@@ -17,7 +18,7 @@ const INITIAL_DATA = [
 ];
 
 function App() {
-    const { searchQuery, onChangeSearch, handleSearch } = useSearchFilm('');
+    const { searchQuery, onChangeSearch, handleSearch } = useSearchFilm();
     return (
         <UserContextProvider>
             <div className="app">
