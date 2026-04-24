@@ -1,7 +1,8 @@
 import styles from './CardList.module.css';
 import CardFilm from '../CardFilm/CardFilm';
+import { CardListProps } from './CardList.props';
 
-function CardList({ films }) {
+function CardList({ films }: CardListProps) {
     if (films.length === 0) {
         return <p className={styles.paragraph}>Здесь пока ничего нет...</p>;
     } else {

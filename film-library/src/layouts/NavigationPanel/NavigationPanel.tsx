@@ -1,15 +1,16 @@
-import { UserContext } from '../../Context/UserContext';
+import { MouseEvent } from 'react';
 import { useAuth } from '../../hooks/Auth.hook';
 import styles from './NavigationPanel.module.css';
-function NavigationPanel() {
-    const { activeUser, handleLogOut } = useAuth(UserContext);
+import { NavigationPanelProps } from './NavigationPanel.props';
+function NavigationPanel({ ...props }: NavigationPanelProps) {
+    const { activeUser, handleLogOut } = useAuth();
 
-    const userLogout = (e) => {
+    const userLogout = (e: MouseEvent<HTMLAnchorElement>) => {
         e.preventDefault();
         handleLogOut();
     };
     return (
-        <div className={styles.container}>
+        <div className={styles.container} {...props}>
             <div className={styles.logo}>
                 <img src="/logo.svg" alt="Логотип" />
             </div>

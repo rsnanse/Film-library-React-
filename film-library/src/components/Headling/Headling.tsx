@@ -1,5 +1,6 @@
 import styles from './Headling.module.css';
-function Headling({ children }) {
+import { HeadlingProps } from './Headling.props';
+function Headling({ children }: HeadlingProps) {
     return <h1 className={styles.headling}>{children}</h1>;
 }
 

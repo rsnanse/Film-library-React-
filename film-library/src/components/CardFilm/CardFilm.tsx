@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { KeyboardEvent, MouseEvent, useState } from 'react';
 import styles from './CardFilm.module.css';
-function CardFilm({ counter, poster, title }) {
-    const [favoritesIcon, setFavoritesIcon] = useState(true);
+import { CardFilmProps } from './CardFilm.props';
+function CardFilm({ counter, poster, title }: CardFilmProps) {
+    const [favoritesIcon, setFavoritesIcon] = useState<boolean>(true);
 
-    const addInFavorites = (e) => {
+    const addInFavorites = (e: MouseEvent) => {
         setFavoritesIcon((prev) => !prev);
         e.stopPropagation();
     };
@@ -12,8 +13,15 @@ function CardFilm({ counter, poster, title }) {
         console.log('asd');
     };
 
+    const handleKeyDown = (e: KeyboardEvent) => {
+        e.preventDefault();
+        if (e.key === 'Enter' || e.key === ' ') {
+            moveToFilm();
+        }
+    };
+
     return (
-        <div className={styles.card} role="button" tabIndex="0" onClick={moveToFilm}>
+        <div className={styles.card} role="button" tabIndex={0} onClick={moveToFilm} onKeyDown={handleKeyDown}>
             <div className={styles.rating}>
                 <img src="/raiting-star.svg" alt="Рейтинг" />
                 <span className={styles.count}>{counter}</span>
