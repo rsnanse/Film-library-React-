@@ -1,4 +1,4 @@
-import { SyntheticEvent } from 'react';
+import { ChangeEvent, SyntheticEvent } from 'react';
 
 export interface FormProps {
     placeholder: string;
@@ -6,6 +6,6 @@ export interface FormProps {
     text: string;
     direction?: string;
     value?: string;
-    onSubmit?: (event: SyntheticEvent<HTMLFormElement>) => void;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement, Element>) => void;
+    onSubmit?: (e: SyntheticEvent<HTMLFormElement>) => void;
+    onChange?: (e: ChangeEvent<HTMLInputElement, Element>) => void;
 }

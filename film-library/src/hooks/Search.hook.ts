@@ -5,8 +5,8 @@ export function useSearchFilm() {
     const onChangeSearch = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchQuery(e.target.value);
     };
-    const handleSearch = (event: SyntheticEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const handleSearch = (e: SyntheticEvent<HTMLFormElement>) => {
+        e.preventDefault();
         if (searchQuery && typeof searchQuery === 'string' && searchQuery.trim()) {
             console.log('Поиск фильма с названием:', searchQuery);
             setSearchQuery('');
