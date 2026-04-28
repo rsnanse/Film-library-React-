@@ -5,6 +5,7 @@ function CardFilm({ counter, poster, title }: CardFilmProps) {
     const [favoritesIcon, setFavoritesIcon] = useState<boolean>(true);
 
     const addInFavorites = (e: MouseEvent) => {
+        e.preventDefault();
         setFavoritesIcon((prev) => !prev);
         e.stopPropagation();
     };
@@ -21,7 +22,7 @@ function CardFilm({ counter, poster, title }: CardFilmProps) {
     };
 
     return (
-        <div className={styles.card} role="button" tabIndex={0} onClick={moveToFilm} onKeyDown={handleKeyDown}>
+        <div className={styles.card} role="button" onClick={moveToFilm} onKeyDown={handleKeyDown}>
             <div className={styles.rating}>
                 <img src="/raiting-star.svg" alt="Рейтинг" />
                 <span className={styles.count}>{counter}</span>

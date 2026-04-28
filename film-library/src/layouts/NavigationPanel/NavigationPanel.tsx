@@ -2,6 +2,8 @@ import { MouseEvent } from 'react';
 import { useAuth } from '../../hooks/Auth.hook';
 import styles from './NavigationPanel.module.css';
 import { NavigationPanelProps } from './NavigationPanel.props';
+import { NavLink } from 'react-router-dom';
+import cn from 'classnames';
 function NavigationPanel({ ...props }: NavigationPanelProps) {
     const { activeUser, handleLogOut } = useAuth();
 
@@ -17,14 +19,14 @@ function NavigationPanel({ ...props }: NavigationPanelProps) {
             <nav>
                 <ul className={styles.list}>
                     <li className={styles.item}>
-                        <a href="#" className={`${styles.link} ${styles.active}`}>
+                        <NavLink to="/" className={({ isActive }) => cn(styles['link'], { [styles['active']]: isActive })}>
                             Поиск фильмов
-                        </a>
+                        </NavLink>
                     </li>
                     <li className={styles.item}>
-                        <a href="#" className={styles.link}>
+                        <NavLink to="/favorites" className={({ isActive }) => cn(styles['link'], { [styles['active']]: isActive })}>
                             Мои фильмы
-                        </a>
+                        </NavLink>
                         <div className={styles.counter}>2</div>
                     </li>
                     {activeUser.length !== 0 ? (
@@ -44,9 +46,9 @@ function NavigationPanel({ ...props }: NavigationPanelProps) {
                     ) : (
                         <>
                             <li className={styles.item}>
-                                <a href="#" className={styles.link}>
+                                <NavLink to="/login" className={({ isActive }) => cn(styles['link'], { [styles['active']]: isActive })}>
                                     Войти
-                                </a>
+                                </NavLink>
                                 <img src="/login-icon.svg" alt="Иконка войти" />
                             </li>
                         </>

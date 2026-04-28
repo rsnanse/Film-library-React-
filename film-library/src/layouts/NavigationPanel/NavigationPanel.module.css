@@ -42,7 +42,7 @@
 }
 
 .active {
-    color: var(--color-white);
+    color: var(--color-active);
 }
 .link:hover {
     color: #e6edff;
