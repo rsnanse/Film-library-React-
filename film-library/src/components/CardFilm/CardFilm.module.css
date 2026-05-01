@@ -10,51 +10,47 @@
     backdrop-filter: blur(80px);
     background: rgba(32, 40, 62, 0.8);
     cursor: pointer;
+    height: 100%;
+    max-width: 282px;
 }
 
 .card:hover {
     background: rgba(61, 75, 114, 0.8);
 }
 
-.rating {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 4px;
-    border-radius: 8px;
-    padding: 4px 8px;
-    width: fit-content;
-    height: 32px;
-    backdrop-filter: blur(8px);
-    background: rgba(0, 0, 0, 0.65);
-}
-.count {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
-    color: var(--rating-text);
-}
-
 .description {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
 .poster {
     border-radius: 8px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.no-poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 266px;
+    height: 400px;
+    object-fit: cover;
+    background: rgb(0, 0, 0);
+    color: var(--card-title);
+    font-size: 60px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 8px;
-    justify-content: flex-start;
+    padding: 8px 8px 24px 8px;
 }
 
 .title {
@@ -64,32 +60,4 @@
     letter-spacing: 0.02em;
     color: var(--card-title);
     margin: 0;
-}
-
-.button {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: row;
-    gap: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: fit-content;
-}
-
-.tofavorites {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-    color: var(--card-to-favorites);
-}
-
-.infavorites {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 150%;
-    letter-spacing: 0.02em;
-    color: var(--card-in-favorites);
 }
