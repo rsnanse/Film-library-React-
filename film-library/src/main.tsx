@@ -8,6 +8,11 @@ import LoginPage from './Pages/LoginPage/LoginPage';
 import FavoritesPage from './Pages/FavoritesPage/FavoritesPage';
 import MoviePage from './Pages/MoviePage/MoviePage';
 import { UserContextProvider } from './Context/UserContext';
+import axios from 'axios';
+import { POPULAR_REQ } from './helpers/popular-film-req';
+import ErrorPage from './Pages/ErrorPage/ErrorPage';
+import SearchPage from './Pages/SearchPage/SearchPage';
+import { SEARCH_REQ } from './helpers/search-req';
 
 const router = createBrowserRouter([
     {
@@ -16,11 +21,32 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <MainPage />
+                element: <MainPage />,
+                errorElement: <ErrorPage></ErrorPage>,
+                loader: async () => {
+                    const { data } = await axios.get(POPULAR_REQ);
+                    if (!data) {
+                        throw new Error('asdasd');
+                    }
+                    return data;
+                }
             },
             {
                 path: '/login',
                 element: <LoginPage />
+            },
+            {
+                path: '/search',
+                element: <SearchPage />,
+                loader: async ({ request }) => {
+                    const url = new URL(request.url);
+                    const query = url.searchParams.get('query');
+                    if (!query) {
+                        return { results: [] };
+                    }
+                    const { data } = await axios.get(`${SEARCH_REQ}${query}`);
+                    return data;
+                }
             },
             {
                 path: '/favorites',
@@ -28,7 +54,16 @@ const router = createBrowserRouter([
             },
             {
                 path: '/movie/:id',
-                element: <MoviePage />
+                element: <MoviePage />,
+                errorElement: <ErrorPage></ErrorPage>,
+                loader: async ({ params }) => {
+                    const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=22a712b61eee70fa4db16696df987a88&language=ru-RU`);
+                    return data;
+                }
+            },
+            {
+                path: '/*',
+                element: <ErrorPage></ErrorPage>
             }
         ]
     }
